@@ -222,6 +222,7 @@ namespace myPlaceCode
 
             string code = "";
             code = Convert.ToString(i).PadLeft(2, '0') + Convert.ToString(nY).PadLeft(2, '0') + Convert.ToString(nX).PadLeft(2, '0');
+
             return code;
         }
 
@@ -235,6 +236,8 @@ namespace myPlaceCode
                 code += "0";
             else
                 code += "1";
+            //convert time to binary
+           //code =  Convert.ToString(Convert.ToInt64(code, 10), 2);
             return code;
         }
 
@@ -398,7 +401,8 @@ namespace myPlaceCode
                 coderange = trandxy2rangecode(averagex, averagey, averagex, averagey);
                 codedate = GenDateCode();
 
-                code = codepos + "-" + coderange + "-" + codedate + "\r\n";
+                code = codepos + coderange + codedate + "\r\n";
+                //code = codepos + "-" + coderange + "-" + codedate + "\r\n";
 
                 //string temp = codepos + coderange + codedate;
                 //string frontpartcode = temp.Substring(0, 63);
